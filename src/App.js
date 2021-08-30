@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from 'react'
+import Counter from './components/Counter'
+import UserList from './components/UserList'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-sky-300 to-violet-500">
+        <div className="max-w-2xl mx-auto p-4">
+          {/* <Counter /> */}
+          <UserList />
+        </div>
+      </div>
+    )
+  }
 }
-
-export default App;
