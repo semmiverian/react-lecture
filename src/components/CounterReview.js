@@ -1,20 +1,10 @@
-import React, { Component, useState, useEffect } from 'react'
+import React, { Component, useState } from 'react'
 
 export default function Counter({ defaultCounter }) {
   const [counter, setCounter] = useState(defaultCounter)
 
-  useEffect(() => {
-    console.log(counter, 'dalam useEffect')
-  }, [counter])
-
   function decrementCounter() {
     setCounter(counter - 1)
-  }
-
-  function incrementCounter() {
-    console.log(counter, 'sebelum di setState')
-    setCounter(counter + 1)
-    console.log(counter, 'setelah di setState')
   }
 
   return (
@@ -31,7 +21,7 @@ export default function Counter({ defaultCounter }) {
 
         <h2 className="text-xl leading-8 tracking-wide">{counter}</h2>
         <button
-          onClick={incrementCounter}
+          onClick={() => setCounter(counter + 1)}
           className="bg-gradient-to-r from-green-400 to-sky-500 py-2 px-4 text-sky-100 rounded-md shadow hover:from-amber-400 hover:to-rose-500  transition ease-in-out"
         >
           Tambahkan Angka
